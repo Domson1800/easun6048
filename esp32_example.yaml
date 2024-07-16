@@ -1,0 +1,70 @@
+esphome:
+  name: "${lower_devicename}"
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+external_components:
+  - source: github://MirecX/easun6048@master
+    refresh: 0s
+
+substitutions:
+  lower_devicename: "smartshunt"
+  devicename: "SmartShunt_500A"
+  config_version: "v2021.06.02.001"
+  # wifi_fast_connect: "false"
+  # wifi_reboot_timeout: 0s
+  accuracy: "2"
+
+wifi:
+  ssid: "wi-Fi name"
+  password: "wifipassword"
+  power_save_mode: none
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "${devicename} Hotspot"
+    password: "mppt15035"
+
+captive_portal:
+
+logger:
+  baud_rate: 0
+
+api:
+ota:
+
+# web_server:
+#  port: 80
+
+time:
+  - platform: homeassistant
+
+uart:
+  id: uart_bus
+  rx_pin: GPIO16
+  tx_pin: GPIO17
+  baud_rate: 9600
+
+easun6048:
+    uart_id: uart_bus
+
+sensor:
+  - platform: easun6048
+    voltage_sensor:
+      name: "battery voltage"
+      id: bv
+    pv_sensor:
+      name: "pv_sensor"
+      id: pvv
+    current_sensor:
+      name: "current_sensor"
+      id: cs
+    temp_sensor:
+      name: "temp_sensor"
+      id: ts
+    power_sensor:
+      name: "power_sensor"
+      id: ps
