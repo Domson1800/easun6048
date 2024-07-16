@@ -42,6 +42,7 @@ ota:
 time:
   - platform: homeassistant
 
+# only RX pin is important
 uart:
   id: uart_bus
   rx_pin: GPIO16
