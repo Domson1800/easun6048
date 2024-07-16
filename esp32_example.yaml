@@ -11,12 +11,7 @@ external_components:
     refresh: 0s
 
 substitutions:
-  lower_devicename: "smartshunt"
-  devicename: "SmartShunt_500A"
-  config_version: "v2021.06.02.001"
-  # wifi_fast_connect: "false"
-  # wifi_reboot_timeout: 0s
-  accuracy: "2"
+  lower_devicename: "easun6048"
 
 wifi:
   ssid: "wi-Fi name"
