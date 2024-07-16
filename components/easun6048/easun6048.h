@@ -5,6 +5,7 @@
 #include "esphome/components/text_sensor/text_sensor.h"
 #include "esphome/components/uart/uart.h"
 
+
 namespace esphome {
     namespace easun_6048 {
         class EASUN6048Component : public uart::UARTDevice, public Component {
