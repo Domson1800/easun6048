@@ -1,6 +1,6 @@
 #include "easun6048.h"
 #include "esphome/core/log.h"
-#include "<Arduino.h>"
+#include <Arduino.h>
 #include "esphome/core/hal.h"
 namespace esphome {
 namespace easun_6048 {
