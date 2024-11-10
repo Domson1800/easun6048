@@ -1,5 +1,6 @@
 #include "easun6048.h"
 #include "esphome/core/log.h"
+#include "<Arduino.h>"
 #include "esphome/core/hal.h"
 namespace esphome {
 namespace easun_6048 {
@@ -61,7 +62,7 @@ void EASUN6048Component::decodeBuffer(){
 
 char *ptr;
 long EASUN6048Component::processByte(int pointer){
-        String a = String(buf[pointer], HEX);        
+        String a = String(buf[pointer], 16);        
         if(a.length()>2){          
           a = a.substring(a .length()-2);
           return strtoul(a.c_str(), &ptr, 16);          
